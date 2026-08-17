@@ -1,0 +1,142 @@
+[
+  {
+    "pasta": "01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar",
+    "dfd_paginas": 4,
+    "dfd_campos": 179,
+    "proposta_paginas": 4,
+    "proposta_campos": 105
+  },
+  {
+    "pasta": "02 - Aquisicao de Bens - Dispensa Emergencial",
+    "dfd_paginas": 4,
+    "dfd_campos": 195,
+    "proposta_paginas": 3,
+    "proposta_campos": 104
+  },
+  {
+    "pasta": "03 - Aquisicao de Bens - Dispensa - Licitacao Deserta",
+    "dfd_paginas": 4,
+    "dfd_campos": 180,
+    "proposta_paginas": 3,
+    "proposta_campos": 97
+  },
+  {
+    "pasta": "04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41",
+    "dfd_paginas": 4,
+    "dfd_campos": 176,
+    "proposta_paginas": 3,
+    "proposta_campos": 97
+  },
+  {
+    "pasta": "05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11",
+    "dfd_paginas": 4,
+    "dfd_campos": 176,
+    "proposta_paginas": 3,
+    "proposta_campos": 97
+  },
+  {
+    "pasta": "06 - Aquisicao de Bens - Inexigibilidade - Exclusividade",
+    "dfd_paginas": 4,
+    "dfd_campos": 181,
+    "proposta_paginas": 3,
+    "proposta_campos": 107
+  },
+  {
+    "pasta": "07 - Aquisicao de Bens - Registro de Precos",
+    "dfd_paginas": 4,
+    "dfd_campos": 178,
+    "proposta_paginas": 3,
+    "proposta_campos": 101
+  },
+  {
+    "pasta": "08 - Aquisicao de Bens - Reserva de Valor",
+    "dfd_paginas": 4,
+    "dfd_campos": 178,
+    "proposta_paginas": 3,
+    "proposta_campos": 98
+  },
+  {
+    "pasta": "09 - Serviços - Credenciamento - Carnês - Boletos -Tributos",
+    "dfd_paginas": 4,
+    "dfd_campos": 195,
+    "proposta_paginas": 4,
+    "proposta_campos": 112
+  },
+  {
+    "pasta": "10 - Serviços - Credenciamento - Diarias - Hospedagem",
+    "dfd_paginas": 4,
+    "dfd_campos": 195,
+    "proposta_paginas": 3,
+    "proposta_campos": 111
+  },
+  {
+    "pasta": "11 - Serviços - Credenciamento - Emprestimo Consignado",
+    "dfd_paginas": 4,
+    "dfd_campos": 192,
+    "proposta_paginas": 3,
+    "proposta_campos": 99
+  },
+  {
+    "pasta": "12 - Serviços - Credenciamento - Oficineiros - Instrutores",
+    "dfd_paginas": 4,
+    "dfd_campos": 195,
+    "proposta_paginas": 4,
+    "proposta_campos": 104
+  },
+  {
+    "pasta": "13 - Serviços - Credenciamento - Servicos - Exames Médicos",
+    "dfd_paginas": 4,
+    "dfd_campos": 193,
+    "proposta_paginas": 3,
+    "proposta_campos": 107
+  },
+  {
+    "pasta": "14 - Serviços - Dispensa - Contrato de Programa",
+    "dfd_paginas": 4,
+    "dfd_campos": 186,
+    "proposta_paginas": 3,
+    "proposta_campos": 99
+  },
+  {
+    "pasta": "15 - Serviços - Dispensa - Estágio - Jovem Aprendiz",
+    "dfd_paginas": 4,
+    "dfd_campos": 186,
+    "proposta_paginas": 3,
+    "proposta_campos": 109
+  },
+  {
+    "pasta": "16 - Serviços - Dispensa - Licitacao Deserta",
+    "dfd_paginas": 4,
+    "dfd_campos": 189,
+    "proposta_paginas": 3,
+    "proposta_campos": 97
+  },
+  {
+    "pasta": "17 - Serviços - Dispensa - Valor R$ 65.492,11",
+    "dfd_paginas": 4,
+    "dfd_campos": 185,
+    "proposta_paginas": 3,
+    "proposta_campos": 97
+  },
+  {
+    "pasta": "18 - Serviços - Dispensa - Valor R$ 13.098,41",
+    "dfd_paginas": 4,
+    "dfd_campos": 185,
+    "proposta_paginas": 3,
+    "proposta_campos": 97
+  },
+  {
+    "pasta": "19 - Serviços - Dispensa Emergencial",
+    "dfd_paginas": 4,
+    "dfd_campos": 207,
+    "proposta_paginas": 3,
+    "proposta_campos": 104
+  },
+  {
+    "pasta": "20 - Serviços - Inexigibilidade - Exclusividade",
+    "dfd_paginas": 4,
+    "dfd_campos": 190,
+    "proposta_paginas": 3,
+    "proposta_campos": 107
+  }
+]
