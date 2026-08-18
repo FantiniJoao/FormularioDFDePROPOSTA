@@ -3,205 +3,820 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Índice dos formulários</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
-            color: #26343f
+            margin: 0;
+            background: #f4f7fa;
+            color: #26343f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 35px 20px 50px;
+        }
+
+        header {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-left: 5px solid #245a86;
         }
 
         h1 {
-            color: #245a86
+            margin: 0 0 10px;
+            color: #245a86;
+            font-size: 28px;
         }
 
-        p {
-            line-height: 1.45
+        header p {
+            margin: 0;
+            line-height: 1.5;
+            color: #52616d;
         }
 
-        table {
-            border-collapse: collapse;
-            width: 100%
+        .lista {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        th,
-        td {
-            border: 1px solid #ccd4da;
-            padding: 8px;
-            text-align: left
+        .modelo {
+            background: #ffffff;
+            border: 1px solid #d8e0e6;
+            border-radius: 9px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
-        th {
-            background: #d8e5f1
+        .modelo[open] {
+            border-color: #a9c2d5;
+            box-shadow: 0 3px 10px rgba(36, 90, 134, 0.10);
+        }
+
+        summary {
+            display: grid;
+            grid-template-columns: 50px 1fr 30px;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 18px;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:hover {
+            background: #f7fafc;
+        }
+
+        .numero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 30px;
+            border-radius: 6px;
+            background: #d8e5f1;
+            color: #245a86;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .nome {
+            font-weight: 600;
+            color: #26343f;
+            line-height: 1.35;
+        }
+
+        .icone {
+            font-size: 24px;
+            color: #245a86;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .modelo[open] .icone {
+            transform: rotate(45deg);
+        }
+
+        .conteudo {
+            border-top: 1px solid #e3e8ec;
+            padding: 18px;
+            background: #fafcfd;
+        }
+
+        .documentos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .documento {
+            background: #ffffff;
+            border: 1px solid #dce4e9;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .documento-titulo {
+            color: #245a86;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .info {
+            color: #687781;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .acoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 7px 13px;
+            border: 1px solid #b9cbd8;
+            border-radius: 5px;
+            background: #f5f9fc;
+            color: #245a86;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: #d8e5f1;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px 12px 35px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            summary {
+                grid-template-columns: 42px 1fr 25px;
+                padding: 13px;
+            }
+
+            .nome {
+                font-size: 14px;
+            }
+
+            .documentos {
+                grid-template-columns: 1fr;
+            }
+
+            .conteudo {
+                padding: 12px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Formulários adequados - fase preparatória</h1>
+    <div class="container">
 
-    <p>
-        Foram adequados 20 modelos. Cada pasta contém o DFD e a Solicitação/Proposta em três formatos:
-        <b>PDF preenchível</b>,
-        <b>Word 97-2003 (.doc)</b>
-        e <b>questionário web</b> que abre em navegador e salva as respostas localmente.
-    </p>
+        <header>
+            <h1>Formulários adequados - fase preparatória</h1>
+            <p>
+                Foram adequados 20 modelos. Cada pasta contém o DFD e a Solicitação/Proposta
+                em três formatos: <b>PDF preenchível</b>, <b>Word 97-2003 (.doc)</b>
+                e <b>questionário web</b> que abre em navegador e salva as respostas localmente.
+            </p>
+        </header>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nº</th>
-                <th>Modelo</th>
-                <th>DFD</th>
-                <th>Solicitação/Proposta</th>
-            </tr>
-        </thead>
+        <div class="lista">
+            <details class="modelo">
+                <summary>
+                    <span class="numero">01</span>
+                    <span class="nome">01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar</span>
+                    <span class="icone">+</span>
+                </summary>
 
-        <tbody>
-            <tr>
-                <td>01</td>
-                <td>01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar</td>
-                <td><a href= "./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/DFD_Questionario_Web.html">4 pág. / 179 campos</a></td>
-                <td><a href= "./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/Proposta_Questionario_Web.html">4 pág. / 105 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 179 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">4 pág. / 105 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/01 - Aquisicao de Bens - Dispensa - Agricultura_Familiar/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">02</span>
+                    <span class="nome">02 - Aquisicao de Bens - Dispensa Emergencial</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>02</td>
-                <td>02 - Aquisicao de Bens - Dispensa Emergencial</td>
-                <td><a href= "./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/DFD_Questionario_Web.html">4 pág. / 195 campos</a></td>
-                <td><a href= "./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/Proposta_Questionario_Web.html">3 pág. / 104 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 195 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 104 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/02 - Aquisicao de Bens - Dispensa Emergencial/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">03</span>
+                    <span class="nome">03 - Aquisicao de Bens - Dispensa - Licitacao Deserta</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>03</td>
-                <td>03 - Aquisicao de Bens - Dispensa - Licitacao Deserta</td>
-                <td><a href= "./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/DFD_Questionario_Web.html">4 pág. / 180 campos</a></td>
-                <td><a href= "./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/Proposta_Questionario_Web.html">3 pág. / 97 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 180 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 97 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/03 - Aquisicao de Bens - Dispensa - Licitacao Deserta/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">04</span>
+                    <span class="nome">04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>04</td>
-                <td>04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41</td>
-                <td><a href= "./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/DFD_Questionario_Web.html">4 pág. / 176 campos</a></td>
-                <td><a href= "./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/Proposta_Questionario_Web.html">3 pág. / 97 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 176 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 97 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/04 - Aquisicao de Bens - Dispensa - Valor até R$13.098,41/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">05</span>
+                    <span class="nome">05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>05</td>
-                <td>05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11</td>
-                <td><a href= "./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/DFD_Questionario_Web.html">4 pág. / 176 campos</a></td>
-                <td><a href= "./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/Proposta_Questionario_Web.html">3 pág. / 97 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 176 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 97 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/05 - Aquisicao de Bens - Dispensa - Valor até R$ 65.492,11/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">06</span>
+                    <span class="nome">06 - Aquisicao de Bens - Inexigibilidade - Exclusividade</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>06</td>
-                <td>06 - Aquisicao de Bens - Inexigibilidade - Exclusividade</td>
-                <td><a href= "./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/DFD_Questionario_Web.html">4 pág. / 181 campos</a></td>
-                <td><a href= "./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/Proposta_Questionario_Web.html">3 pág. / 107 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 181 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 107 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/06 - Aquisicao de Bens - Inexigibilidade - Exclusividade/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">07</span>
+                    <span class="nome">07 - Aquisicao de Bens - Registro de Precos</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>07</td>
-                <td>07 - Aquisicao de Bens - Registro de Precos</td>
-                <td><a href= "./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/DFD_Questionario_Web.html">4 pág. / 178 campos</a></td>
-                <td><a href= "./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/Proposta_Questionario_Web.html">3 pág. / 101 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 178 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 101 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/07 - Aquisicao de Bens - Registro de Precos/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">08</span>
+                    <span class="nome">08 - Aquisicao de Bens - Reserva de Valor</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>08</td>
-                <td>08 - Aquisicao de Bens - Reserva de Valor</td>
-                <td><a href= "./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/DFD_Questionario_Web.html">4 pág. / 178 campos</a></td>
-                <td><a href= "./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/Proposta_Questionario_Web.html">3 pág. / 98 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 178 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 98 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/08 - Aquisicao de Bens - Reserva de Valor/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">09</span>
+                    <span class="nome">09 - Serviços - Credenciamento - Carnês - Boletos -Tributos</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>09</td>
-                <td>09 - Serviços - Credenciamento - Carnês - Boletos -Tributos</td>
-                <td><a href= "./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/DFD_Questionario_Web.html">4 pág. / 195 campos</a></td>
-                <td><a href= "./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/Proposta_Questionario_Web.html">4 pág. / 112 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 195 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">4 pág. / 112 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/09 - Serviços - Credenciamento - Carnês - Boletos -Tributos/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">10</span>
+                    <span class="nome">10 - Serviços - Credenciamento - Diarias - Hospedagem</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>10</td>
-                <td>10 - Serviços - Credenciamento - Diarias - Hospedagem</td>
-                <td><a href= "./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/DFD_Questionario_Web.html">4 pág. / 195 campos</a></td>
-                <td><a href= "./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/Proposta_Questionario_Web.html">3 pág. / 111 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 195 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 111 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/10 - Serviços - Credenciamento - Diarias - Hospedagem/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">11</span>
+                    <span class="nome">11 - Serviços - Credenciamento - Emprestimo Consignado</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>11</td>
-                <td>11 - Serviços - Credenciamento - Emprestimo Consignado</td>
-                <td><a href= "./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/DFD_Questionario_Web.html">4 pág. / 192 campos</a></td>
-                <td><a href= "./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/Proposta_Questionario_Web.html">3 pág. / 99 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 192 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 99 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/11 - Serviços - Credenciamento - Emprestimo Consignado/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">12</span>
+                    <span class="nome">12 - Serviços - Credenciamento - Oficineiros - Instrutores</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>12</td>
-                <td>12 - Serviços - Credenciamento - Oficineiros - Instrutores</td>
-                <td><a href= "./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/DFD_Questionario_Web.html">4 pág. / 195 campos</a></td>
-                <td><a href= "./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/Proposta_Questionario_Web.html">4 pág. / 104 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 195 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">4 pág. / 104 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/12 - Serviços - Credenciamento - Oficineiros - Instrutores/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">13</span>
+                    <span class="nome">13 - Serviços - Credenciamento - Servicos - Exames Médicos</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>13</td>
-                <td>13 - Serviços - Credenciamento - Servicos - Exames Médicos</td>
-                <td><a href= "./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/DFD_Questionario_Web.html">4 pág. / 193 campos</a></td>
-                <td><a href= "./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/Proposta_Questionario_Web.html">3 pág. / 107 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 193 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 107 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/13 - Serviços - Credenciamento - Servicos - Exames Médicos/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">14</span>
+                    <span class="nome">14 - Serviços - Dispensa - Contrato de Programa</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>14</td>
-                <td>14 - Serviços - Dispensa - Contrato de Programa</td>
-                <td><a href= "./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/DFD_Questionario_Web.html">4 pág. / 186 campos</a></td>
-                <td><a href= "./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/Proposta_Questionario_Web.html">3 pág. / 99 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 186 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 99 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/14 - Serviços - Dispensa - Contrato de Programa/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">15</span>
+                    <span class="nome">15 - Serviços - Dispensa - Estágio - Jovem Aprendiz</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>15</td>
-                <td>15 - Serviços - Dispensa - Estágio - Jovem Aprendiz</td>
-                <td><a href= "./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/DFD_Questionario_Web.html">4 pág. / 186 campos</a></td>
-                <td><a href= "./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/Proposta_Questionario_Web.html">3 pág. / 109 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 186 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 109 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/15 - Serviços - Dispensa - Estágio - Jovem Aprendiz/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">16</span>
+                    <span class="nome">16 - Serviços - Dispensa - Licitacao Deserta</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>16</td>
-                <td>16 - Serviços - Dispensa - Licitacao Deserta</td>
-                <td><a href= "./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/DFD_Questionario_Web.html">4 pág. / 189 campos</a></td>
-                <td><a href= "./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/Proposta_Questionario_Web.html">3 pág. / 97 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 189 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 97 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/16 - Serviços - Dispensa - Licitacao Deserta/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">17</span>
+                    <span class="nome">17 - Serviços - Dispensa - Valor R$ 65.492,11</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>17</td>
-                <td>17 - Serviços - Dispensa - Valor R$ 65.492,11</td>
-                <td><a href= "./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/DFD_Questionario_Web.html">4 pág. / 185 campos</a></td>
-                <td><a href= "./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/Proposta_Questionario_Web.html">3 pág. / 97 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 185 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 97 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/17 - Serviços - Dispensa - Valor R$ 65.492,11/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">18</span>
+                    <span class="nome">18 - Serviços - Dispensa - Valor R$ 13.098,41</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>18</td>
-                <td>18 - Serviços - Dispensa - Valor R$ 13.098,41</td>
-                <td><a href= "./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/DFD_Questionario_Web.html">4 pág. / 185 campos</a></td>
-                <td><a href= "./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/Proposta_Questionario_Web.html">3 pág. / 97 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 185 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 97 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/18 - Serviços - Dispensa - Valor R$ 13.098,41/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">19</span>
+                    <span class="nome">19 - Serviços - Dispensa Emergencial</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>19</td>
-                <td>19 - Serviços - Dispensa Emergencial</td>
-                <td><a href= "./formularios_adequados/19 - Serviços - Dispensa Emergencial/DFD_Questionario_Web.html">4 pág. / 207 campos</a></td>
-                <td><a href= "./formularios_adequados/19 - Serviços - Dispensa Emergencial/Proposta_Questionario_Web.html">3 pág. / 104 campos</a></td>
-            </tr>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 207 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/19 - Serviços - Dispensa Emergencial/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/19 - Serviços - Dispensa Emergencial/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/19 - Serviços - Dispensa Emergencial/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 104 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/19 - Serviços - Dispensa Emergencial/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/19 - Serviços - Dispensa Emergencial/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/19 - Serviços - Dispensa Emergencial/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+            <details class="modelo">
+                <summary>
+                    <span class="numero">20</span>
+                    <span class="nome">20 - Serviços - Inexigibilidade - Exclusividade</span>
+                    <span class="icone">+</span>
+                </summary>
 
-            <tr>
-                <td>20</td>
-                <td>20 - Serviços - Inexigibilidade - Exclusividade</td>
-                <td><a href= "./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/DFD_Questionario_Web.html">4 pág. / 190 campos</a></td>
-                <td><a href= "./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/Proposta_Questionario_Web.html">3 pág. / 107 campos</a></td>
-            </tr>
-        </tbody>
-    </table>
+                <div class="conteudo">
+                    <div class="documentos">
+                <div class="documento">
+                    <div class="documento-titulo">DFD</div>
+                    <div class="info">4 pág. / 190 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/DFD_Questionario_Web.html">Form_Web</a>
+                        <a class="btn" href="./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/DFD_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/DFD_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                <div class="documento">
+                    <div class="documento-titulo">Solicitação / Proposta</div>
+                    <div class="info">3 pág. / 107 campos</div>
+                    <div class="acoes">
+                        <a class="btn" href="./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/Proposta_Questionario_Web.html">Form_web</a>
+                        <a class="btn" href="./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/Proposta_Preenchivel.pdf">PDF</a>
+                        <a class="btn" href="./formularios_adequados/20 - Serviços - Inexigibilidade - Exclusividade/Proposta_Compatibilidade.doc">Doc</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+    </div>
 
 </body>
 
