@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>SOLICITAÇÃO DE ORÇAMENTO / PROPOSTA COMERCIAL</title><style>:root{--b:#245a86;--l:#eef3f7;--g:#eaf3df;--i:#25313b;--m:#62717f}*{box-sizing:border-box}body{margin:0;background:#f5f7f9;color:var(--i);font-family:Arial,Helvetica,sans-serif}.top{background:white;border-bottom:1px solid #d9e0e6;padding:22px 20px 18px;text-align:center}.mun{font-family:Georgia,serif;font-weight:700;color:var(--b);font-size:19px}.dep{font-family:Georgia,serif;font-weight:700;color:#555;font-size:16px;margin-top:3px}.wrap{max-width:950px;margin:24px auto;padding:0 16px 70px}.hero{background:#fff;border-radius:12px;padding:24px;border-top:8px solid var(--b);margin-bottom:18px}.hero h1{font-size:23px;margin:0 0 8px;color:var(--b)}.sub{font-size:17px;font-weight:700}.meta{color:var(--m);margin-top:6px;font-style:italic}.annex{text-align:center;font-weight:700;font-size:18px;margin:18px 0}h2{background:var(--b);color:#fff;padding:10px 14px;border-radius:6px;font-size:17px;margin:22px 0 8px}.note{background:var(--l);padding:13px 15px;border-radius:6px;line-height:1.4;margin:8px 0}.note.green{background:var(--g)}.card{background:#fff;border:1px solid #dfe5ea;border-radius:8px;padding:8px 16px;margin:8px 0 14px}.question{padding:14px 0;border-bottom:1px solid #edf0f2}.question:last-child{border-bottom:0}.qtitle{font-weight:700;display:block;margin-bottom:7px}.helper{font-size:13px;color:var(--m);line-height:1.35;margin-bottom:8px}.choices{display:flex;gap:10px 18px;flex-wrap:wrap;margin:6px 0 10px}.choice{display:flex;align-items:flex-start;gap:6px;font-size:14px}.choice input{width:18px;height:18px}.choice.long{margin:8px 0}.text,textarea,select,.cell{width:100%;padding:10px 11px;border:1px solid #b9c3cc;border-radius:5px;font:inherit;background:#fff}textarea{resize:vertical}.tablewrap{overflow:auto;padding:0}table{border-collapse:collapse;width:100%;min-width:650px}th{background:#d8e5f1;padding:9px;border:1px solid #9fafbd;font-size:13px}td{border:1px solid #c9d0d6;padding:5px}.cell{border:0;border-radius:0;min-width:80px}.fixed{text-align:center;background:#fafafa}.actions{position:fixed;bottom:0;left:0;right:0;background:#ffffffef;border-top:1px solid #d8dee4;padding:12px;display:flex;gap:10px;justify-content:center}.btn{border:0;border-radius:6px;padding:10px 16px;font-weight:700;cursor:pointer}.primary{background:var(--b);color:#fff}.secondary{background:#e8edf1;color:#223}.small{font-size:12px;color:var(--m);text-align:center;margin:18px}@media print{body{background:#fff}.actions{display:none}.wrap{max-width:none;margin:0;padding:0}.question{break-inside:avoid}h2{break-after:avoid}}
+.table-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start;margin:-4px 0 18px}.btn.mini{padding:8px 12px;font-size:13px}.cellarea{resize:vertical;min-height:44px;line-height:1.3;white-space:pre-wrap}.question textarea{min-height:44px}.tablewrap table{table-layout:auto}@media print{.no-print{display:none!important}.cellarea{min-height:0;resize:none}.table-controls{display:none!important}}
+
+/* PMAB_FORM_PRINT_V3
+   Impressao compacta e segura: controles de edicao sao substituidos por texto
+   simples na impressao/PDF, evitando barras de rolagem, corte e sobreposicao. */
+textarea.pmab-expand,
+textarea.cellarea{
+  overflow-x:hidden!important;
+  overflow-y:hidden!important;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  line-height:1.35;
+}
+textarea::-webkit-scrollbar{display:none!important}
+.pmab-print-mirror{display:none}
+
+@media print{
+  /* margem zero tende a suprimir cabecalhos/rodapes automaticos do navegador;
+     o espacamento util e recriado no proprio documento. */
+  @page{size:A4 portrait;margin:0}
+  html,body{margin:0!important;padding:0!important;overflow:visible!important;background:#fff!important}
+  body{
+    padding:9mm 10mm 11mm!important;
+    color:#1f2a33!important;
+    font-size:9.8pt!important;
+    line-height:1.3!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+  .actions,.no-print,.table-controls{display:none!important}
+  .wrap{max-width:none!important;width:auto!important;margin:0!important;padding:0!important}
+  .top{padding:0 0 4mm!important;margin:0 0 3mm!important;border-bottom:1px solid #d7dde2!important}
+  .mun{font-size:14pt!important}.dep{font-size:11pt!important}
+  .hero{padding:4mm 4.5mm!important;margin:0 0 3mm!important;border-radius:0!important;border-top-width:4px!important}
+  .hero h1{font-size:14pt!important;margin:0 0 1.5mm!important}
+  .sub{font-size:11pt!important}.meta{font-size:9pt!important;margin-top:1mm!important}
+  .annex{font-size:11pt!important;margin:3mm 0!important}
+  h2{
+    font-size:10.5pt!important;
+    padding:2.2mm 3mm!important;
+    margin:4mm 0 1.5mm!important;
+    border-radius:0!important;
+    break-after:avoid!important;
+    page-break-after:avoid!important;
+  }
+  .note{padding:2.5mm 3mm!important;margin:1.5mm 0 2.5mm!important;border-radius:0!important;line-height:1.3!important}
+  .card{
+    border:0!important;
+    border-radius:0!important;
+    background:#fff!important;
+    padding:0!important;
+    margin:0 0 2.5mm!important;
+    overflow:visible!important;
+    break-inside:auto!important;
+    page-break-inside:auto!important;
+  }
+  .question{
+    padding:2mm 0!important;
+    border-bottom:1px solid #e3e7ea!important;
+    overflow:visible!important;
+    break-inside:auto!important;
+    page-break-inside:auto!important;
+  }
+  .question.pmab-short-question{
+    break-inside:avoid!important;
+    page-break-inside:avoid!important;
+  }
+  .qtitle{font-size:9.8pt!important;margin-bottom:1mm!important;break-after:avoid!important;page-break-after:avoid!important}
+  .helper{font-size:8.7pt!important;margin-bottom:1mm!important;line-height:1.25!important;break-after:avoid!important;page-break-after:avoid!important}
+  .choices{gap:1.5mm 4mm!important;margin:1mm 0 1.5mm!important}
+  .choice{font-size:9pt!important;gap:1.2mm!important}
+  .choice input[type=checkbox],.choice input[type=radio]{width:3.6mm!important;height:3.6mm!important;margin:0!important;flex:0 0 auto!important}
+
+  /* nunca imprimir o widget editavel: o espelho de texto e a fonte autoritativa */
+  textarea,select,
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]){display:none!important}
+  .pmab-print-mirror{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-height:1.15em!important;
+    padding:0.5mm 0 0.8mm!important;
+    margin:0!important;
+    border:0!important;
+    background:transparent!important;
+    color:#1f2a33!important;
+    white-space:pre-wrap!important;
+    overflow:visible!important;
+    overflow-wrap:anywhere!important;
+    word-break:break-word!important;
+    line-height:1.3!important;
+    font:inherit!important;
+    break-inside:auto!important;
+    page-break-inside:auto!important;
+  }
+  .pmab-print-mirror.pmab-empty{
+    min-height:4mm!important;
+    border-bottom:1px solid #cfd6dc!important;
+  }
+  .pmab-print-mirror.pmab-short{white-space:normal!important}
+
+  .tablewrap{overflow:visible!important;padding:0!important}
+  table{width:100%!important;min-width:0!important;table-layout:fixed!important;border-collapse:collapse!important;font-size:8.5pt!important}
+  thead{display:table-header-group!important}
+  tr{break-inside:avoid!important;page-break-inside:avoid!important}
+  th{padding:1.6mm 1.2mm!important;font-size:8pt!important}
+  td{padding:1.2mm!important;vertical-align:top!important;overflow-wrap:anywhere!important}
+  td .pmab-print-mirror{padding:0!important;min-height:3.5mm!important;border-bottom:0!important}
+  td .choices{display:block!important;margin:0!important}
+  td .choice{display:inline-flex!important;margin:0 2mm 1mm 0!important}
+  .fixed{padding:1.2mm!important}
+  .small{font-size:8pt!important;margin:3mm 0 0!important}
+}
+</style></head><body><div class="top"><div class="mun">PREFEITURA MUNICIPAL DE AMÉRICO BRASILIENSE</div><div class="dep">DEPARTAMENTO DE COMPRAS E LICITAÇÕES</div></div><main class="wrap"><div class="hero"><h1>SOLICITAÇÃO DE ORÇAMENTO / PROPOSTA COMERCIAL</h1><div class="sub">Dispensa – Emergencial</div><div class="meta">Fluxo/ID de referência: 5020  |  Categoria: Prestação de serviços</div></div><form id="form"><div class="annex">ANEXO - MODELO DE SOLICITAÇÃO DE ORÇAMENTO / PROPOSTA</div><div class="note green">INSTRUÇÃO AO PROPONENTE: Preencher todos os campos aplicáveis, rubricar as páginas e devolver a proposta com os documentos solicitados. A consulta não gera obrigação de contratação. Os preços devem incluir todos os custos necessários ao cumprimento integral do objeto.</div><h2>1. IDENTIFICAÇÃO DA CONSULTA</h2><div class="card"><div class="question pmab-short-question"><label class="qtitle">Unidade solicitante</label><div class="choices"><label class="choice"><input name="q0_opt" type="checkbox" value="Gabinete"/><span>Gabinete</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Administração"/><span>Administração</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Finanças/Tesouraria"/><span>Finanças/Tesouraria</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Compras/Licitações"/><span>Compras/Licitações</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Saúde"/><span>Saúde</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Educação"/><span>Educação</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Promoção Social"/><span>Promoção Social</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Planejamento/Obras"/><span>Planejamento/Obras</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="DAEMA"/><span>DAEMA</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Esportes"/><span>Esportes</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Cultura"/><span>Cultura</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Meio Ambiente"/><span>Meio Ambiente</span></label><label class="choice"><input name="q0_opt" type="checkbox" value="Outro"/><span>Outro</span></label></div></div><div class="question pmab-short-question"><label class="qtitle">Processo/DFD</label><div class="helper">Nº: ID/fluxo: 5020</div><input class="text" maxlength="600" name="q1_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Responsável pelo envio</label><input class="text pmab-short-control" maxlength="300" name="q2_text" placeholder="Nome, telefone e e-mail" type="text"/></div><div class="question pmab-short-question"><label class="qtitle">Data de envio</label><input class="text" name="q3_text" type="date"/></div><div class="question pmab-short-question"><label class="qtitle">Prazo para resposta</label><input class="text pmab-short-control" maxlength="350" name="q4_text" placeholder="Data, horário e e-mail/sistema para resposta" type="text"/></div><div class="question"><label class="qtitle">Objeto resumido</label><textarea class="pmab-expand" name="q5_text" placeholder="Digite a resposta" rows="3" wrap="soft"></textarea></div><div class="question pmab-short-question"><label class="qtitle">Local/condição principal</label><input class="text" maxlength="600" name="q6_text" placeholder="Digite a resposta"/></div></div><h2>2. ITENS E PREÇOS PROPOSTOS</h2><div class="card tablewrap"><table id="itemsTable"><thead><tr><th>Item</th><th>Descrição do serviço</th><th>Unid.</th><th>Qtd.</th><th>Preço unitário</th><th>Preço total</th></tr></thead><tbody><tr><td class="fixed">1</td><td><textarea class="cell cellarea" name="q7_0_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_0_2"/></td><td><input class="cell" maxlength="600" name="q7_0_3"/></td><td><input class="cell" maxlength="600" name="q7_0_4"/></td><td><input class="cell" maxlength="600" name="q7_0_5"/></td></tr><tr><td class="fixed">2</td><td><textarea class="cell cellarea" name="q7_1_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_1_2"/></td><td><input class="cell" maxlength="600" name="q7_1_3"/></td><td><input class="cell" maxlength="600" name="q7_1_4"/></td><td><input class="cell" maxlength="600" name="q7_1_5"/></td></tr><tr><td class="fixed">3</td><td><textarea class="cell cellarea" name="q7_2_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_2_2"/></td><td><input class="cell" maxlength="600" name="q7_2_3"/></td><td><input class="cell" maxlength="600" name="q7_2_4"/></td><td><input class="cell" maxlength="600" name="q7_2_5"/></td></tr><tr><td class="fixed">4</td><td><textarea class="cell cellarea" name="q7_3_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_3_2"/></td><td><input class="cell" maxlength="600" name="q7_3_3"/></td><td><input class="cell" maxlength="600" name="q7_3_4"/></td><td><input class="cell" maxlength="600" name="q7_3_5"/></td></tr><tr><td class="fixed">5</td><td><textarea class="cell cellarea" name="q7_4_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_4_2"/></td><td><input class="cell" maxlength="600" name="q7_4_3"/></td><td><input class="cell" maxlength="600" name="q7_4_4"/></td><td><input class="cell" maxlength="600" name="q7_4_5"/></td></tr><tr><td class="fixed">6</td><td><textarea class="cell cellarea" name="q7_5_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_5_2"/></td><td><input class="cell" maxlength="600" name="q7_5_3"/></td><td><input class="cell" maxlength="600" name="q7_5_4"/></td><td><input class="cell" maxlength="600" name="q7_5_5"/></td></tr><tr><td class="fixed">7</td><td><textarea class="cell cellarea" name="q7_6_1" rows="2"></textarea></td><td><input class="cell" maxlength="600" name="q7_6_2"/></td><td><input class="cell" maxlength="600" name="q7_6_3"/></td><td><input class="cell" maxlength="600" name="q7_6_4"/></td><td><input class="cell" maxlength="600" name="q7_6_5"/></td></tr></tbody></table></div><div class="table-controls no-print"><button class="btn secondary mini" onclick="addDynamicRow('itemsTable')" type="button">+ Adicionar item</button><button class="btn secondary mini" onclick="removeDynamicRow('itemsTable')" type="button">− Remover último item</button></div><div class="card"><div class="question pmab-short-question"><label class="qtitle">Valor total da proposta</label><input class="text" maxlength="600" name="q8_text" placeholder="R$ 0,00"/></div><div class="question pmab-short-question"><label class="qtitle">Valor total por extenso</label><input class="text" maxlength="600" name="q9_text" placeholder="Digite a resposta"/></div></div><h2>3. CONDIÇÕES COMERCIAIS E TÉCNICAS</h2><div class="card"><div class="question pmab-short-question"><label class="qtitle">Disponibilidade imediata</label><div class="choices"><label class="choice"><input name="q10_opt" type="checkbox" value="Sim"/><span>Sim</span></label><label class="choice"><input name="q10_opt" type="checkbox" value="Não"/><span>Não</span></label></div><input class="text" maxlength="600" name="q10_text" placeholder="Se necessário, informe a data/hora mais próxima"/></div><div class="question pmab-short-question"><label class="qtitle">Capacidade de atendimento</label><div class="helper">Quantidade/escopo disponível no prazo emergencial:</div><input class="text" maxlength="600" name="q11_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Prazo para mobilização</label><div class="helper">horas/dias após autorização.</div><input class="text" maxlength="600" name="q12_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Validade em situação emergencial</label><div class="helper">dias.</div><input class="text" maxlength="600" name="q13_text" placeholder="Digite a resposta"/></div><div class="question"><label class="qtitle">Contato 24h/responsável</label><div class="helper">Nome: Telefone: E-mail:</div><textarea class="pmab-expand" name="q14_text" placeholder="Digite a resposta" rows="3" wrap="soft"></textarea></div><div class="question pmab-short-question"><label class="qtitle">Validade da proposta</label><input class="text" maxlength="600" name="q15_text" placeholder="Ex.: 30 dias"/></div><div class="question pmab-short-question"><label class="qtitle">Prazo de entrega/início</label><input class="text" maxlength="600" name="q16_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Frete/deslocamento</label><div class="choices"><label class="choice"><input name="q17_opt" type="checkbox" value="Incluso"/><span>Incluso</span></label><label class="choice"><input name="q17_opt" type="checkbox" value="Não incluso. Valor/condição"/><span>Não incluso. Valor/condição</span></label></div><input class="text" maxlength="600" name="q17_text" placeholder="Se marcou 'Não incluso', informe valor/condição"/></div><div class="question pmab-short-question"><label class="qtitle">Tributos e encargos</label><div class="choices"><label class="choice"><input name="q18_opt" type="checkbox" value="Inclusos no preço"/><span>Inclusos no preço</span></label><label class="choice"><input name="q18_opt" type="checkbox" value="Informar exceção"/><span>Informar exceção</span></label></div><input class="text" maxlength="600" name="q18_text" placeholder="Informe eventual exceção"/></div><div class="question pmab-short-question"><label class="qtitle">Condição de pagamento</label><div class="helper">Após recebimento/medição e liquidação, conforme regras municipais. Proposta alternativa:</div><input class="text" maxlength="600" name="q19_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Garantia/assistência</label><input class="text" maxlength="600" name="q20_text" placeholder="Digite a resposta"/></div></div><h2>4. DOCUMENTOS E INFORMAÇÕES A ANEXAR</h2><div class="card checklist"><label class="choice long"><input name="q21" type="checkbox" value="sim"/><span>Cartão CNPJ e identificação do representante responsável pela proposta.</span></label><label class="choice long"><input name="q22" type="checkbox" value="sim"/><span>Catálogo, ficha técnica, portfólio, memorial ou descrição detalhada do objeto, conforme aplicável.</span></label><label class="choice long"><input name="q23" type="checkbox" value="sim"/><span>Planilha adicional de preços e condições, quando o espaço do formulário for insuficiente.</span></label><label class="choice long"><input name="q24" type="checkbox" value="sim"/><span>Comprovação da validade e da data de emissão da proposta.</span></label><label class="choice long"><input name="q25" type="checkbox" value="sim"/><span>Declaração de disponibilidade imediata e capacidade de atendimento no prazo indicado.</span></label></div><h2>5. IDENTIFICAÇÃO DO PROPONENTE</h2><div class="card"><div class="question pmab-short-question"><label class="qtitle">Razão social/nome</label><input class="text" maxlength="600" name="q26_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">CNPJ/CPF</label><input class="text" maxlength="600" name="q27_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Endereço</label><input class="text" maxlength="600" name="q28_text" placeholder="Digite a resposta"/></div><div class="question pmab-short-question"><label class="qtitle">Contato</label><input class="text pmab-short-control" maxlength="300" name="q29_text" placeholder="Telefone/ramal e e-mail" type="text"/></div><div class="question pmab-short-question"><label class="qtitle">Dados bancários</label><input class="text pmab-short-control" maxlength="400" name="q30_text" placeholder="Banco, agência, conta e PIX, se aplicável" type="text"/></div><div class="question pmab-short-question"><label class="qtitle">Representante</label><input class="text pmab-short-control" maxlength="300" name="q31_text" placeholder="Nome e cargo" type="text"/></div></div><h2>DECLARAÇÃO E VALIDAÇÃO</h2><div class="note">DECLARAÇÃO: Declaro que a proposta contempla todos os custos diretos e indiretos, tributos, encargos, fretes, seguros e demais despesas necessárias ao integral cumprimento do objeto, e que as informações prestadas são verdadeiras.</div><div class="note">OBSERVAÇÃO: A Administração poderá utilizar esta proposta como uma das fontes de pesquisa de preços, sujeita à análise de comparabilidade, contemporaneidade, consistência e vantajosidade. A proposta não substitui documentos de habilitação nem assegura contratação.</div></form><div class="small">Modelo padronizado para instrução da fase preparatória – Lei nº 14.133/2021</div></main><div class="actions"><button class="btn primary" onclick="window.print()">Imprimir / Salvar em PDF</button><button class="btn secondary" onclick="ex()">Exportar respostas</button><button class="btn secondary" onclick="cl()">Limpar</button></div><script>
+const f=document.getElementById('form');
+const k="pmab_Proposta_5020";
+const dynamicTables=[{"id": "itemsTable", "prefix": "q7", "defaultRows": 7, "minRows": 1}];
+function tableBody(cfg){const t=document.getElementById(cfg.id);return t?t.querySelector('tbody'):null;}
+function clearRow(row){row.querySelectorAll('input,textarea,select').forEach(e=>{if(e.type==='checkbox'||e.type==='radio')e.checked=false;else if(e.tagName==='SELECT')e.selectedIndex=0;else e.value='';});}
+function renameRow(row,cfg,index){const fixed=row.querySelector('.fixed');if(fixed)fixed.textContent=String(index+1);row.querySelectorAll('[name]').forEach(e=>{const re=new RegExp('^'+cfg.prefix+'_\\d+_');e.name=e.name.replace(re,cfg.prefix+'_'+index+'_');});}
+function addDynamicRow(id,saveAfter=true){const cfg=dynamicTables.find(x=>x.id===id);if(!cfg)return;const tbody=tableBody(cfg);if(!tbody||!tbody.rows.length)return;const row=tbody.rows[tbody.rows.length-1].cloneNode(true);clearRow(row);renameRow(row,cfg,tbody.rows.length);tbody.appendChild(row);if(saveAfter)s();}
+function removeDynamicRow(id,saveAfter=true){const cfg=dynamicTables.find(x=>x.id===id);if(!cfg)return;const tbody=tableBody(cfg);if(!tbody)return;const min=cfg.minRows||1;if(tbody.rows.length>min)tbody.deleteRow(tbody.rows.length-1);if(saveAfter)s();}
+function setRowCount(cfg,target){const tbody=tableBody(cfg);if(!tbody)return;target=Math.max(cfg.minRows||1,Number(target)||cfg.defaultRows||tbody.rows.length);while(tbody.rows.length<target)addDynamicRow(cfg.id,false);while(tbody.rows.length>target&&tbody.rows.length>(cfg.minRows||1))tbody.deleteRow(tbody.rows.length-1);}
+function s(){const d={__dynamicRows:{}};for(const cfg of dynamicTables){const tbody=tableBody(cfg);if(tbody)d.__dynamicRows[cfg.id]=tbody.rows.length;}for(const e of f.elements){if(!e.name)continue;if(e.type==='checkbox'||e.type==='radio'){if(!d[e.name])d[e.name]=[];if(e.checked)d[e.name].push(e.value);}else d[e.name]=e.value;}try{localStorage.setItem(k,JSON.stringify(d));}catch(err){console.warn('Não foi possível salvar automaticamente as respostas no navegador.',err);}return d;}
+function l(){try{const d=JSON.parse(localStorage.getItem(k)||'{}');for(const cfg of dynamicTables){const n=d.__dynamicRows&&d.__dynamicRows[cfg.id];if(n)setRowCount(cfg,n);}for(const e of f.elements){if(!e.name)continue;if(e.type==='checkbox'||e.type==='radio')e.checked=(d[e.name]||[]).includes(e.value);else if(d[e.name]!=null)e.value=d[e.name];}}catch(x){console.warn('Não foi possível restaurar as respostas salvas.',x);}}
+f.addEventListener('input',s);f.addEventListener('change',s);l();
+function ex(){const d=s();const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download="Proposta_5020_respostas.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
+function cl(){if(confirm('Limpar todas as respostas?')){localStorage.removeItem(k);f.reset();for(const cfg of dynamicTables)setRowCount(cfg,cfg.defaultRows);}}
+
+/* PMAB_FORM_PRINT_V3 */
+(function(){
+  function isTextControl(el){
+    if(!el || !el.tagName) return false;
+    if(el.tagName==='TEXTAREA' || el.tagName==='SELECT') return true;
+    if(el.tagName==='INPUT'){
+      const t=(el.type||'text').toLowerCase();
+      return !['checkbox','radio','button','submit','reset','file','hidden'].includes(t);
+    }
+    return false;
+  }
+  function mirrorValue(el){
+    if(el.tagName==='SELECT'){
+      const o=el.options && el.selectedIndex>=0 ? el.options[el.selectedIndex] : null;
+      return o ? (o.text||'') : '';
+    }
+    return el.value==null ? '' : String(el.value);
+  }
+  function ensureMirror(el){
+    if(!isTextControl(el)) return null;
+    let m=el.nextElementSibling;
+    if(!m || !m.classList || !m.classList.contains('pmab-print-mirror')){
+      m=document.createElement(el.closest('td')?'span':'div');
+      m.className='pmab-print-mirror';
+      el.insertAdjacentElement('afterend',m);
+    }
+    if(el.tagName==='INPUT' || el.classList.contains('pmab-short-control')) m.classList.add('pmab-short');
+    return m;
+  }
+  function updateMirror(el){
+    const m=ensureMirror(el); if(!m) return;
+    const v=mirrorValue(el).trim();
+    m.textContent=v || '\u00a0';
+    m.classList.toggle('pmab-empty',!v);
+  }
+  function resizeTextarea(el){
+    if(!el || el.tagName!=='TEXTAREA') return;
+    el.classList.add('pmab-expand');
+    el.style.height='auto';
+    const min=el.classList.contains('cellarea')?44:44;
+    el.style.height=Math.max(min,el.scrollHeight+2)+'px';
+  }
+  function setup(root){
+    if(!root || !root.querySelectorAll) return;
+    root.querySelectorAll('textarea').forEach(resizeTextarea);
+    root.querySelectorAll('textarea,select,input').forEach(updateMirror);
+  }
+  document.addEventListener('input',function(e){
+    if(e.target && e.target.tagName==='TEXTAREA') resizeTextarea(e.target);
+    updateMirror(e.target);
+  },true);
+  document.addEventListener('change',function(e){updateMirror(e.target);},true);
+  const obs=new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1) setup(n);});});
+  });
+  function init(){
+    setup(document);
+    if(document.body) obs.observe(document.body,{childList:true,subtree:true});
+    setTimeout(function(){setup(document)},50);
+    setTimeout(function(){setup(document)},300);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+  window.addEventListener('beforeprint',function(){setup(document);});
+  window.addEventListener('afterprint',function(){document.querySelectorAll('textarea').forEach(resizeTextarea);});
+})();
+</script></body></html>
